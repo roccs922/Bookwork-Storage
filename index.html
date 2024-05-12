@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang=en>
+  <head>
+    <meta charset=UTF-8>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <title> Bookwork Storage</title>
+    <link rel=stylesheet href=styles.css>
+    <link rel=icon href=../assets/images/portal.gif>
+  </head>
+  <body class=body onload='formInput("add"),formInput("get")'>
+    <div class=container>
+      <header class=header>
+        <h1>
+                   </a> <p class=title> Bookwork Storage</p>
+        </h1>
+        <button class="button button-clear" id=exportLocalStorageBtn onclick='output(!1,"Storage Opened!")' style=padding-top:9px>Storage</button>
+      </header>
+      <main class=form-container>
+        <section class=form-box>
+          <div class=form-box-content>
+            <div class=output-container>
+              <div class=output onclick=clearOutput()>
+              </div>
+            </div>
+            <noscript aria-hidden=true>
+              <div class=error>
+                SenAI needs JavaScript to run. Please enable scripting in your
+                browser.
+              </div>
+            </noscript>
+            <div class=inner-form-container>
+              <div class=form-title>
+                <b>Add Bookwork code</b>
+              </div>
+              <form class=function-form id=add-form onsubmit='return addItem(),formInput("add"),!1'>
+                <div class=form-group>
+                  <label class=input-label for=add-id>Bookwork code:</label>
+                  <input class=input name=add-id id=add-id autocomplete=off autofocus oninput='formInput("add")'>
+                </div>
+                <div class=form-group>
+                  <label class=input-label for=add-answer>Answer:</label>
+                  <input class=input name=add-answer id=add-answer autocomplete=off autofocus oninput='formInput("add")'>
+                </div>
+                <div class="form-group form-buttons">
+                  <button class="button disabled counterButton" id=add-button onclick='window.incrementCounter("bookwork")' type=submit tabindex=0 disabled>
+                    Add
+                  </button>
+                  <script src=count-hitter.js type=module></script>
+
+                </div>
+              </form>
+            </div>
+            <div class=inner-form-container>
+              <div class=form-title>
+                <b>Get Bookwork code</b>
+              </div>
+              <form class=function-form id=get-form onsubmit='return getItem(),formInput("get"),!1'>
+                <div class=form-group>
+                  <label class=input-label for=get-id>Bookwork code:</label>
+                  <input class=input name=get-id id=get-id autocomplete=off autofocus oninput='formInput("get")'>
+                </div>
+                <input type=hidden value=test>
+                <div class="form-group form-buttons">
+                  <button class="button disabled" id=get-button type=submit tabindex=0 disabled>
+                  Get
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class=footer>
+        <div class=footer-container id=footer-text>
+          <div class=footer-contents>
+            <span class=copyright>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src=app.js></script>
+  
+
